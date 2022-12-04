@@ -79,6 +79,9 @@ async def echo(update: Update, context: CallbackContext.DEFAULT_TYPE):
             reply_message = 'please using auth <authcode> to init chatgpt'
     else:
         reply_message = cb.get_chat_response(update.message.text)['message']
+        if reply_message == 'Your authentication token has expired. Please try signing in again.':
+            reply_message = 'token has expired. please using auth <authcode> to init chatgpt'
+            cb.authorization_key = None
     await context.bot.send_message(chat_id=update.effective_chat.id, text=reply_message)
 
     
