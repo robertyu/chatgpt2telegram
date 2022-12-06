@@ -1,3 +1,6 @@
+### Recommand to use https://github.com/acheong08/ChatGPT, this repo also include login.
+
+
 # chatgpt2telegram
 Sample code to create chatgpt bot on telegram
 
